@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #181818, #2c2c2c);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Cabeçalho --- */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+/* --- Galeria --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeIn 0.8s forwards;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* --- Efeitos de Hover --- */
+.photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* --- Animação fade-in --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
